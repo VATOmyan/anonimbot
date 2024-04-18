@@ -132,5 +132,8 @@ def voice_cmd(message):
     print(id_doc)
     bot.send_sticker(dataBase.get_work_chat(message.chat.id)[1], id_doc)
     #dataBase.sendMsg(id_doc)
-
-bot.polling(none_stop = True)
+while True:
+    try:
+        bot.polling(none_stop = True)
+    except Exception as e:
+        print(e)
